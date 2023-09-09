@@ -94,4 +94,11 @@ generateShop();
         if (searchItem) {
             document.getElementById(`quantity-id-${id}`).innerHTML = searchItem.item;
         }
+       calculation();
     };
+
+    let calculation=()=>{
+        let cartIconAmount=document.getElementById("carAmount");
+         cartIconAmount.innerHTML=basket.map((x)=>x.item).reduce((x,y)=>{return x+y},0);
+        
+    }
